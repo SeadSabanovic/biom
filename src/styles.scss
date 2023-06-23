@@ -1,0 +1,10 @@
+@import "./styles/variables.scss";
+@import "./styles/fonts.scss";
+@import "./styles/typography.scss";
+
+// Reset
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

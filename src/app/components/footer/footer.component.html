@@ -1,0 +1,60 @@
+<div class="footer-inner">
+  <!-- Newsletter -->
+  <div class="footer-newsletter">
+    <div class="footer-newsletter__content">
+      <h3 class="footer-newsletter__content__title">
+        Get the latest news delivered to your inbox.
+      </h3>
+      <p class="footer-newsletter__content__desc body-sm">
+        Get access to the exciting stuff — exclusive new deals, product launches
+        and more. Plus, get a 10% discount on your next order.
+      </p>
+    </div>
+    <img src="assets/Biom_wipe_2.png" alt="" class="footer-newsletter__bg" />
+  </div>
+
+  <!-- Footer NAV -->
+  <div class="footer-nav">
+    <a routerLink="'/'" class="footer-nav__logo">
+      <img
+        src="assets/logo_footer.svg"
+        alt="biom logo"
+        class="footer-nav__logo__image"
+      />
+    </a>
+    <ul
+      class="footer-nav__links"
+      *ngFor="let collection of NAV_LINKS_MAIN.links; let index"
+    >
+      <li class="footer-nav__links__item" *ngFor="let link of collection">
+        <a [routerLink]="link.route" class="footer-nav__links__item__link">
+          {{ link.link_text }}
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-bottom__inner">
+      <span class="footer-bottom__inner__content">
+        &copy; 2021 biom. All rights reserved •
+        <a routerLink="">Privacy Policy</a> •
+        <a routerLink="">Terms of Service</a>
+      </span>
+    </div>
+    <div class="footer-bottom__social">
+      <a
+        class="footer-bottom__social__link"
+        *ngFor="let social of SOCIALS"
+        [href]="social.href"
+        target="_blank"
+      >
+        <img
+          class="footer-bottom__social__link__icon"
+          [src]="social.icon"
+          alt="social.name"
+        />
+      </a>
+    </div>
+  </div>
+</div>
