@@ -4,10 +4,11 @@
   top: 0;
   left: 0;
   right: 0;
-  background-color: #fff;
+  background-color: rgba(#fff, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
+  backdrop-filter: blur(10px);
 
   .navigation-inner {
     padding: 0 50px;
