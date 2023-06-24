@@ -1,0 +1,19 @@
+<div class="section-intro-content">
+  <p class="section-intro-content__caption">THE BIOM DISPENSER</p>
+  <h2 class="section-intro-content__title">
+    Redefine your experience of clean.
+  </h2>
+  <p class="body-md section-intro-content__description">
+    A quality engineered wipes dispenser that looks beautiful in your home,
+    making better habits for your home and planet always within reach.
+  </p>
+  <div class="section-intro-content__info">
+    <div class="section-intro-content__info__item" *ngFor="let item of info">
+      <img [src]="item.icon" alt="" />
+      <span class="body-md">
+        {{ item.info }}
+      </span>
+    </div>
+  </div>
+</div>
+<img src="assets/Biom_intro.png" alt="biom intro" class="section-intro-bg" />

@@ -1,0 +1,36 @@
+<div class="section-aditional-info__inner">
+  <img
+    src="assets/info/green.jpeg"
+    alt=""
+    class="section-aditional-info__inner__prop"
+  />
+  <div class="section-aditional-info__content">
+    <img
+      src="assets/info/Refill.png"
+      alt=""
+      class="section-aditional-info__content__prop"
+    />
+
+    <p class="section-aditional-info__content__caption">BIOM WIPES</p>
+    <h2 class="section-aditional-info__content__title">
+      Better for you, and the planet.
+    </h2>
+    <p class="body-md section-aditional-info__content__description">
+      The experience of clean should feel amazing. In a time when we’re
+      constantly sanitizing, it can be damaging to our hands and skins. We
+      decided to load our wipes with Aloe to take care of you, while you take
+      care of your home.
+    </p>
+    <div class="section-aditional-info__content__info">
+      <div
+        class="section-aditional-info__content__info__item"
+        *ngFor="let item of info"
+      >
+        <img [src]="item.icon" alt="" />
+        <span class="body-md">
+          {{ item.info }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+:host {
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+  max-height: 730px;
+  padding: 0 25px;
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+
+  .section-intro-content {
+    padding: 75px 0 85px;
+    max-width: 566px;
+    margin-right: calc(140px - 25px);
+    color: var(--color-blue-dark);
+
+    &__caption {
+      font-size: 14px;
+      letter-spacing: 2.1px;
+    }
+
+    &__title {
+      margin-top: 8px;
+      font-size: 2.25rem;
+    }
+
+    &__description {
+      margin-top: 12px;
+    }
+
+    &__info {
+      margin-top: 42px;
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+
+      &__item {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+      }
+    }
+  }
+
+  .section-intro-bg {
+    display: block;
+    z-index: -1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: none;
+    object-position: 19% 30%;
+  }
+}

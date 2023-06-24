@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  background-color: var(--color-light-grey);
+
+  .section-testimonials-inner {
+    width: 100%;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 90px 25px 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--color-blue-dark);
+  }
+}

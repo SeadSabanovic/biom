@@ -8,6 +8,10 @@ import { RoutingModule } from './routing.module';
 import { AppComponent } from '../app.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { SectionVideoComponent } from '../components/home/section-video/section-video.component';
+import { SectionIntroComponent } from '../components/home/section-intro/section-intro.component';
+import { SectionAdditionalInfoComponent } from '../components/home/section-additional-info/section-additional-info.component';
+import { SectionDispensersComponent } from '../components/home/section-dispensers/section-dispensers.component';
+import { SectionTestimonialsComponent } from '../components/home/section-testimonials/section-testimonials.component';
 
 export const COMPONENTS = [
   AppComponent,
@@ -17,6 +21,10 @@ export const COMPONENTS = [
   FooterComponent,
   LandingComponent,
   SectionVideoComponent,
+  SectionIntroComponent,
+  SectionAdditionalInfoComponent,
+  SectionDispensersComponent,
+  SectionTestimonialsComponent,
 ];
 
 @NgModule({
