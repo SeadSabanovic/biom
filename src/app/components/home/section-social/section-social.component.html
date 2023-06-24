@@ -1,0 +1,13 @@
+<div class="social__inner">
+  <h2 class="social__inner__hash">#cleanwithbiom</h2>
+  <div class="social__inner__socials" #container>
+    <a
+      [href]="social.href"
+      *ngFor="let social of socials"
+      target="_blank"
+      class="social__inner__socials__social"
+    >
+      <img [src]="social.image" class="social__inner__socials__social__image" />
+    </a>
+  </div>
+</div>

@@ -70,7 +70,6 @@ export class SectionTestimonialsComponent implements AfterViewInit {
 
   setActiveTestimonal(index: number) {
     this.activeIndex = index;
-    console.log(index);
     const testimonials = this.testimonialsEl.toArray();
     for (let i = 0; i < testimonials.length; i++) {
       if (
