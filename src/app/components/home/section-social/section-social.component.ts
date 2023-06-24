@@ -49,7 +49,7 @@ export class SectionSocialComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     gsap.to(this.containerEl.nativeElement, {
-      x: -50,
+      x: -200,
       scrollTrigger: {
         trigger: this.containerEl.nativeElement,
         start: 'top bottom',
