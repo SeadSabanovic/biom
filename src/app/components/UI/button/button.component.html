@@ -1,3 +1,9 @@
-<div class="inner" [ngClass]="{ 'inner--light': true }">
+<div
+  class="inner"
+  [ngClass]="{
+    'inner--light': style === 'light',
+    'inner--dark': style === 'dark'
+  }"
+>
   <span class="inner__label">{{ label }}</span>
 </div>

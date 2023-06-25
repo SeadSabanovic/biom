@@ -8,6 +8,15 @@
     transition: background-color 0.3s var(--transition-normal);
     border-radius: 6px;
 
+    &--dark {
+      color: var(--color-light);
+      background-color: var(--color-green-dark);
+
+      &:hover {
+        background-color: var(--color-blue-dark);
+      }
+    }
+
     &--light {
       color: var(--color-green-dark);
       background-color: #fff;
