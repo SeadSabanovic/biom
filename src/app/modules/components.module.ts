@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from '../components/home/home.component';
 import { NavigationComponent } from '../components/navigation/navigation.component';
-import { ContainerComponent } from '../components/UI/container/container.component';
 import { LandingComponent } from '../components/home/landing/landing.component';
 import { RoutingModule } from './routing.module';
 import { AppComponent } from '../app.component';
@@ -14,11 +13,11 @@ import { SectionDispensersComponent } from '../components/home/section-dispenser
 import { SectionTestimonialsComponent } from '../components/home/section-testimonials/section-testimonials.component';
 import { SectionSocialComponent } from '../components/home/section-social/section-social.component';
 import { SectionScrollComponent } from '../components/home/section-scroll/section-scroll.component';
+import { NewsletterInputComponent } from '../components/UI/newsletter-input/newsletter-input.component';
 
 export const COMPONENTS = [
   AppComponent,
   NavigationComponent,
-  ContainerComponent,
   HomeComponent,
   FooterComponent,
   LandingComponent,
@@ -29,6 +28,7 @@ export const COMPONENTS = [
   SectionTestimonialsComponent,
   SectionSocialComponent,
   SectionScrollComponent,
+  NewsletterInputComponent
 ];
 
 @NgModule({

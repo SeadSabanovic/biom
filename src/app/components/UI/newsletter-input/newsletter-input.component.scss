@@ -1,0 +1,51 @@
+:host {
+  position: relative;
+  display: block;
+  margin-top: 18px;
+  width: 100%;
+
+  .input {
+    width: 100%;
+    appearance: none;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    padding: 15px;
+    font-size: 1rem;
+    font-family: Brandon, "Open Sans", "Helvetica Neue", sans-serif;
+    padding-right: 58px;
+
+    &::placeholder {
+      color: #000;
+      opacity: 1; /* Firefox */
+    }
+  }
+
+  .button {
+    position: absolute;
+    top: 50%;
+    right: 7px;
+    transform: translateY(-50%);
+    height: 38px;
+    width: 44px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-green-dark);
+    border-radius: 6px;
+    transition: background-color 0.3s var(--transition-normal);
+
+    img {
+      transition: transform 0.3s var(--transition-normal);
+    }
+
+    &:hover {
+      background-color: var(--color-blue-dark);
+
+      img {
+        transform: translateX(4px);
+      }
+    }
+  }
+}
