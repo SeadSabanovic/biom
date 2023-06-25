@@ -14,6 +14,7 @@ import { SectionTestimonialsComponent } from '../components/home/section-testimo
 import { SectionSocialComponent } from '../components/home/section-social/section-social.component';
 import { SectionScrollComponent } from '../components/home/section-scroll/section-scroll.component';
 import { NewsletterInputComponent } from '../components/UI/newsletter-input/newsletter-input.component';
+import { ButtonComponent } from '../components/UI/button/button.component';
 
 export const COMPONENTS = [
   AppComponent,
@@ -28,7 +29,8 @@ export const COMPONENTS = [
   SectionTestimonialsComponent,
   SectionSocialComponent,
   SectionScrollComponent,
-  NewsletterInputComponent
+  NewsletterInputComponent,
+  ButtonComponent
 ];
 
 @NgModule({

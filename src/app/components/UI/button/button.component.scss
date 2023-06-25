@@ -1,0 +1,28 @@
+:host {
+  display: block;
+
+  .inner {
+    width: fit-content;
+    padding: 1rem 40px;
+    cursor: pointer;
+    transition: background-color 0.3s var(--transition-normal);
+    border-radius: 6px;
+
+    &--light {
+      color: var(--color-green-dark);
+      background-color: #fff;
+
+      &:hover {
+        background-color: var(--color-light);
+      }
+    }
+
+    &__label {
+      font-size: 13px;
+      letter-spacing: 1.95px;
+      text-transform: uppercase;
+      user-select: none;
+      font-weight: 900;
+    }
+  }
+}
