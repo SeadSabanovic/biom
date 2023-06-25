@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavLinks } from 'src/app/interfaces/nav-link';
 
 @Component({
@@ -7,6 +7,9 @@ import { NavLinks } from 'src/app/interfaces/nav-link';
   styleUrls: ['./navigation.component.scss'],
 })
 export class NavigationComponent {
+  @ViewChild('toggle') toggle!: ElementRef;
+  isActive = false;
+
   NAV_LINKS_MAIN: NavLinks = {
     links: [
       [
@@ -35,4 +38,9 @@ export class NavigationComponent {
       ],
     ],
   };
+
+  onToggle() {
+    this.isActive = !this.isActive;
+    this.toggle.nativeElement.classList.toggle('hamburger--active')
+  }
 }
