@@ -2,7 +2,9 @@
   display: block;
   max-width: var(--container-max);
   width: 100%;
+  overflow: hidden;
   margin: 0 auto;
+
   .section-aditional-info {
     &__inner {
       position: relative;
@@ -10,6 +12,10 @@
       margin: 126px 0 164px;
       display: flex;
       justify-content: flex-end;
+
+      @media (max-width: 1000px) {
+        padding: 0 50px 0;
+      }
 
       &__prop {
         width: 496px;
@@ -20,6 +26,13 @@
         bottom: 0;
         top: -36px;
         object-fit: cover;
+
+        @media (max-width: 1355px) {
+          z-index: -2;
+          height: 70%;
+          width: 50%;
+          top: 15%;
+        }
       }
     }
 
@@ -30,11 +43,26 @@
       margin-right: calc(140px - 70px);
       color: #000;
 
+      @media (max-width: 1355px) {
+        margin-right: unset;
+        margin-left: 70px;
+        padding: 60px 25px;
+      }
+
+      app-button {
+        margin-top: 45px;
+        margin-left: 46px;
+      }
+
       &__prop {
         position: absolute;
         width: 308px;
         left: calc(-220px - 154px);
         bottom: -74px;
+
+        @media (max-width: 1355px) {
+          left: -50%;
+        }
       }
 
       &::after {
@@ -43,10 +71,16 @@
         position: absolute;
         background-color: var(--color-green-light);
         border-radius: 14px;
-        height: 100%;
+        height: calc(100% - 95px);
         right: -70px;
         left: -220px;
         top: 0;
+
+        @media (max-width: 1355px) {
+          height: calc(100% - 85px);
+          right: 0;
+          left: 0;
+        }
       }
 
       &__caption {
