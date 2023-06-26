@@ -5,13 +5,17 @@
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 60px 0 0 70px;
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+  }
 }
 
 .cta {
   width: 297px;
   margin-top: 60px;
 
-  @media screen and (min-width: 1440px) {
+  @media (min-width: 1440px) {
     position: absolute;
   }
 
@@ -29,7 +33,7 @@
   @media screen and (min-width: 1440px) {
     min-width: 400px;
   }
-  
+
   &__dispenser {
     width: 100%;
     $dispenser: &;
@@ -49,6 +53,10 @@
     &:nth-child(2) {
       transform: translateX(40px);
       z-index: 2;
+    }
+
+    @media (max-width: 1200px) {
+      transform: unset !important;
     }
 
     &:hover {

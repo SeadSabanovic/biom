@@ -47,7 +47,6 @@ export class SectionScrollComponent implements AfterViewInit {
     });
 
     this.resizeService.resize$.subscribe(() => {
-      console.log('test');
       animation.invalidate().play();
     });
   }

@@ -3,11 +3,6 @@
 </div>
 <div class="dispensers">
   <div class="dispensers__dispenser" *ngFor="let dispenser of dispensers">
-    <img
-      class="dispensers__dispenser__img"
-      src="assets/dispensers/dispenser_{{ dispenser.color }}.png"
-      alt="{{ dispenser.color }} biom dispenser"
-    />
     <div class="dispensers__dispenser__content">
       <h5 class="dispensers__dispenser__content__title">
         {{ dispenser.title }}
@@ -16,5 +11,10 @@
         {{ dispenser.caption }}
       </p>
     </div>
+    <img
+      class="dispensers__dispenser__img"
+      src="assets/dispensers/dispenser_{{ dispenser.color }}.png"
+      alt="{{ dispenser.color }} biom dispenser"
+    />
   </div>
 </div>

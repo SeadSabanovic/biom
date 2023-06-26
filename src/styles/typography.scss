@@ -7,6 +7,10 @@ h5 {
   letter-spacing: 0;
   line-height: 1.2;
   font-family: Chronicle, "Open Sans", "Helvetica Neue", sans-serif;
+
+  @media (max-width: 680px) {
+    line-height: 1.2 !important;
+  }
 }
 
 body {

@@ -18,7 +18,8 @@
     position: relative;
     padding: 25px;
     min-width: 100%;
-    min-height: 675px;
+    height: 675px;
+    max-height: calc(100vh - var(--nav-height) - 25px);
     z-index: 5;
     position: relative;
     color: var(--color-light);
@@ -32,7 +33,6 @@
     &__over {
       font-size: 14px;
       letter-spacing: 2.1px;
-      
     }
 
     &__title {
@@ -46,6 +46,7 @@
       margin-top: 10px;
       letter-spacing: 0;
       line-height: 1.5;
+      margin-bottom: 24px;
     }
   }
 
