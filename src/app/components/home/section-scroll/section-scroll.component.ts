@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ResizeService } from 'src/app/services/resize.service';
 gsap.registerPlugin(ScrollTrigger);
 
 @Component({
@@ -29,8 +30,10 @@ export class SectionScrollComponent implements AfterViewInit {
     },
   ];
 
+  constructor(private resizeService: ResizeService) {}
+
   ngAfterViewInit() {
-    gsap.to(this.containerEl.nativeElement, {
+    let animation = gsap.to(this.containerEl.nativeElement, {
       x: `${-(
         this.containerEl.nativeElement.offsetWidth * (this.ITEMS.length - 2) -
         (this.ITEMS.length - 1) * -20
@@ -41,6 +44,11 @@ export class SectionScrollComponent implements AfterViewInit {
         end: 'bottom 10%',
         scrub: 1,
       },
+    });
+
+    this.resizeService.resize$.subscribe(() => {
+      console.log('test');
+      animation.invalidate().play();
     });
   }
 }
