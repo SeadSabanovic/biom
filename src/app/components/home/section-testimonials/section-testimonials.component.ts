@@ -18,7 +18,6 @@ import { ResizeService } from 'src/app/services/resize.service';
 export class SectionTestimonialsComponent implements AfterViewInit {
   @ViewChild('container') containerEl!: ElementRef;
   @ViewChildren('testimonial') testimonialsEl!: QueryList<ElementRef>;
-  private interval!: ReturnType<typeof setInterval>;
 
   TESTIMONIALS: Testimonial[] = [
     {
@@ -49,9 +48,7 @@ export class SectionTestimonialsComponent implements AfterViewInit {
   constructor(
     private renderer: Renderer2,
     private resizeService: ResizeService
-  ) {
-    this.startInterval();
-  }
+  ) {}
 
   ngAfterViewInit() {
     this.setActiveTestimonal(this.activeIndex);
@@ -59,20 +56,6 @@ export class SectionTestimonialsComponent implements AfterViewInit {
     this.resizeService.resize$.subscribe(() => {
       this.setHeight();
     });
-  }
-
-  startInterval() {
-    this.interval = setInterval(() => {
-      if (this.activeIndex + 1 == this.TESTIMONIALS.length) {
-        this.activeIndex = 0;
-      } else this.activeIndex++;
-      this.setActiveTestimonal(this.activeIndex);
-    }, 5000);
-  }
-
-  resetInterval() {
-    clearInterval(this.interval);
-    this.startInterval();
   }
 
   setHeight() {
@@ -100,6 +83,5 @@ export class SectionTestimonialsComponent implements AfterViewInit {
     }
 
     this.setHeight();
-    this.resetInterval();
   }
 }
