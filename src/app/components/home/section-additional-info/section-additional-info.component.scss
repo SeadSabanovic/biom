@@ -4,6 +4,9 @@
   width: 100%;
   overflow: hidden;
   margin: 0 auto;
+  @media (max-width: 680px) {
+    padding-top: 60px;
+  }
 
   .section-aditional-info {
     &__inner {
@@ -14,7 +17,16 @@
       justify-content: flex-end;
 
       @media (max-width: 1000px) {
-        padding: 0 50px 0;
+        padding: 0;
+      }
+
+      @media (max-width: 860px) {
+        margin: 0;
+      }
+
+      @media (max-width: 680px) {
+        padding-top: 300px;
+        justify-content: unset;
       }
 
       &__prop {
@@ -33,6 +45,17 @@
           width: 50%;
           top: 15%;
         }
+
+        @media (max-width: 1000px) {
+          left: 0;
+        }
+
+        @media (max-width: 680px) {
+          top: 0;
+          left: 0;
+          width: 100%;
+          max-height: 500px;
+        }
       }
     }
 
@@ -46,12 +69,22 @@
       @media (max-width: 1355px) {
         margin-right: unset;
         margin-left: 70px;
+        padding: 60px 50px;
+      }
+
+      @media (max-width: 680px) {
+        margin: 0;
+        max-width: unset;
         padding: 60px 25px;
       }
 
       app-button {
         margin-top: 45px;
         margin-left: 46px;
+
+        @media (max-width: 860px) {
+          margin-left: unset;
+        }
       }
 
       &__prop {
@@ -62,6 +95,14 @@
 
         @media (max-width: 1355px) {
           left: -50%;
+        }
+
+        @media (max-width: 860px) {
+          top: unset;
+          left: unset;
+          bottom: unset;
+          position: relative;
+          margin-bottom: 25px;
         }
       }
 
@@ -80,6 +121,21 @@
           height: calc(100% - 85px);
           right: 0;
           left: 0;
+        }
+
+        @media (max-width: 1000px) {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+
+        @media (max-width: 860px) {
+          top: 200px;
+          height: calc(100% - 85px - 200px);
+        }
+
+        @media (max-width: 680px) {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
         }
       }
 
@@ -103,6 +159,10 @@
         display: flex;
         flex-direction: column;
         gap: 35px;
+
+        @media (max-width: 860px) {
+          margin-left: unset;
+        }
 
         &__item {
           display: flex;
