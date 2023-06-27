@@ -1,3 +1,4 @@
+import { debounceTime } from 'rxjs/operators';
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { Social } from 'src/app/interfaces/social';
 
@@ -58,6 +59,7 @@ export class SectionSocialComponent implements AfterViewInit {
         start: 'top bottom',
         end: '+=100%',
         scrub: true,
+        invalidateOnRefresh: false,
       },
     });
   }
@@ -65,15 +67,18 @@ export class SectionSocialComponent implements AfterViewInit {
   ngAfterViewInit() {
     setTimeout(() => {
       this.animation = this.animate();
-    }, 100);
+    }, 2000);
 
-    this.resizeService.resize$.subscribe(() => {
-      if (this.animation) {
-        this.animation.kill();
-        setTimeout(() => {
+    this.resizeService.resize$
+      .pipe(
+        debounceTime(2000) // Debounce for 2000ms (adjust as needed)
+      )
+      .subscribe(() => {
+        if (this.animation) {
+          console.log('test');
+          this.animation.kill();
           this.animation = this.animate();
-        }, 200);
-      }
-    });
+        }
+      });
   }
 }

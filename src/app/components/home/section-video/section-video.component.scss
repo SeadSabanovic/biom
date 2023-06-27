@@ -30,6 +30,10 @@
     align-items: center;
     text-align: center;
 
+    @media (max-width: 480px) {
+      max-height: unset;
+    }
+
     &__over {
       font-size: 14px;
       letter-spacing: 2.1px;

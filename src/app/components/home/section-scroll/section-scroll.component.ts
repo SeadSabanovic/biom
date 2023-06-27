@@ -76,14 +76,14 @@ export class SectionScrollComponent implements AfterViewInit {
   ngAfterViewInit() {
     setTimeout(() => {
       this.animation = this.animate();
-    }, 100);
+    }, 200);
 
     this.resizeService.resize$.subscribe(() => {
       if (this.animation) {
         this.animation.kill();
         setTimeout(() => {
           this.animation = this.animate();
-        }, 100);
+        }, 500);
       }
     });
   }
