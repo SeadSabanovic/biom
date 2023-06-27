@@ -1,10 +1,14 @@
 :host {
   display: block;
   height: calc(100vh - var(--nav-height));
-  max-height: 900px;
+
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 25px 25px;
+
+  @media (min-width: 1440px) {
+    max-height: 900px;
+  }
 
   .landing-content {
     padding: 25px 0;
@@ -16,6 +20,10 @@
     &__inner {
       padding: 0 85px;
 
+      @media (max-width: 1200px) {
+        padding: 0 25px;
+      }
+
       &__title,
       &__desc {
         color: var(--color-light);
@@ -23,6 +31,10 @@
 
       &__title {
         font-size: 3.5rem;
+
+        @media (max-width: 480px) {
+          font-size: 2.5rem;
+        }
       }
 
       &__desc {
@@ -31,6 +43,10 @@
         margin-top: 14px;
         margin-bottom: 24px;
         max-width: 410px;
+
+        @media (max-width: 480px) {
+          font-size: 1.125rem;
+        }
       }
     }
 
@@ -43,6 +59,10 @@
       height: 100%;
       object-fit: cover;
       z-index: -1;
+
+      @media (max-width: 1200px) {
+        object-position: 30%;
+      }
     }
   }
 }
