@@ -67,7 +67,7 @@ export class SectionSocialComponent implements AfterViewInit {
   ngAfterViewInit() {
     setTimeout(() => {
       this.animation = this.animate();
-    }, 2000);
+    }, 1000);
 
     this.resizeService.resize$
       .pipe(

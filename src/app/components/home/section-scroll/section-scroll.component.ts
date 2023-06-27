@@ -1,3 +1,4 @@
+import { debounceTime, tap } from 'rxjs/operators';
 import {
   AfterViewInit,
   Component,
@@ -76,15 +77,17 @@ export class SectionScrollComponent implements AfterViewInit {
   ngAfterViewInit() {
     setTimeout(() => {
       this.animation = this.animate();
-    }, 200);
+    }, 100);
 
-    this.resizeService.resize$.subscribe(() => {
-      if (this.animation) {
-        this.animation.kill();
-        setTimeout(() => {
-          this.animation = this.animate();
-        }, 500);
-      }
-    });
+    this.resizeService.resize$
+      .pipe(
+        tap(() => {
+          this.animation?.kill(true, false);
+        }),
+        debounceTime(200)
+      )
+      .subscribe(() => {
+        this.animation = this.animate();
+      });
   }
 }

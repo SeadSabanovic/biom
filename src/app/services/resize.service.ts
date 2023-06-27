@@ -9,7 +9,7 @@ export class ResizeService {
   private resizeObservable: Observable<Event>;
 
   constructor() {
-    this.resizeObservable = fromEvent(window, 'resize').pipe(debounceTime(200));
+    this.resizeObservable = fromEvent(window, 'resize').pipe(debounceTime(100));
   }
 
   get resize$(): Observable<Event> {
