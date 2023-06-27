@@ -1,10 +1,12 @@
 :host {
+  position: relative;
+  z-index: 1;
   display: block;
-  height: calc(100vh - var(--nav-height));
+  height: calc(100vh - var(--nav-height) - 25px);
 
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 25px 25px;
+  padding: 0 25px;
 
   @media (min-width: 1440px) {
     max-height: 900px;

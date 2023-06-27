@@ -30,24 +30,34 @@ export class SectionScrollComponent implements AfterViewInit {
     },
   ];
 
+  animation!: gsap.core.Tween | null;
+
   constructor(private resizeService: ResizeService) {}
 
-  ngAfterViewInit() {
-    let animation = gsap.to(this.containerEl.nativeElement, {
+  animate() {
+    return gsap.to(this.containerEl.nativeElement, {
       x: `${-(
-        this.containerEl.nativeElement.offsetWidth * (this.ITEMS.length - 2) -
+        this.containerEl.nativeElement.offsetWidth * (this.ITEMS.length - 1) -
         (this.ITEMS.length - 1) * -20
       )}`,
       scrollTrigger: {
         trigger: this.containerEl.nativeElement,
-        start: 'top 40%',
-        end: 'bottom 10%',
+        start: 'bottom 80%',
+        end: 'bottom 20%',
         scrub: 1,
+        invalidateOnRefresh: true,
       },
     });
+  }
 
+  ngAfterViewInit() {
+    this.animation = this.animate();
     this.resizeService.resize$.subscribe(() => {
-      animation.invalidate().play();
+      this.animation?.kill();
+      gsap.set(this.containerEl.nativeElement, {
+        x: 0,
+      });
+      this.animation = this.animate();
     });
   }
 }

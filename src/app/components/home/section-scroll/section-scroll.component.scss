@@ -9,11 +9,25 @@
     max-width: var(--container-max);
     margin: 0 auto;
 
+    @media (max-width: 1200px) {
+      display: flex;
+      justify-content: center;
+    }
+
     &__inner {
       width: calc(100% / 3);
       transform: translateX(-20px);
       display: flex;
       gap: 20px;
+
+      @media (max-width: 1200px) {
+        width: calc(100% / 2 - 10px);
+        transform: translateX(0px);
+      }
+
+      @media (max-width: 860px) {
+        width: calc(100% - 50px);
+      }
 
       &__item {
         $item: &;
@@ -70,8 +84,16 @@
     color: #fff;
     text-align: center;
 
+    @media (max-width: 860px) {
+      width: 100%;
+    }
+
     &__title {
       font-size: 78px;
+
+      @media (max-width: 860px) {
+        font-size: 50px;
+      }
     }
   }
 }
