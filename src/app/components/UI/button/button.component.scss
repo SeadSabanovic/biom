@@ -27,6 +27,14 @@
       }
     }
 
+    &--ig {
+      svg {
+        * {
+          transition: fill 0.1s var(--transition-normal);
+        }
+      }
+    }
+
     &--outline {
       color: var(--color-green-dark);
       border: 1px solid var(--color-blue-dark);
@@ -44,6 +52,7 @@
         justify-content: center;
         width: 48px;
         border-left: 1px solid var(--color-blue-dark);
+        transition: background-color 0.3s var(--transition-normal);
 
         img {
           transition: transform 0.3s var(--transition-normal);
@@ -58,6 +67,17 @@
         .inner__icon {
           img {
             transform: translateX(4px);
+          }
+        }
+
+        &.inner--ig {
+          .inner__icon {
+            background-color: var(--color-blue-dark);
+          }
+          svg {
+            * {
+              fill: #fff;
+            }
           }
         }
       }
