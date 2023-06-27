@@ -6,3 +6,11 @@
 img {
   user-select: none;
 }
+
+body {
+  @media (max-width: 900px) {
+    &.nav--active {
+      overflow: hidden;
+    }
+  }
+}

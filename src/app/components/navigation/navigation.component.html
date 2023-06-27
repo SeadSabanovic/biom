@@ -37,3 +37,31 @@
     </li>
   </ul>
 </div>
+
+<div class="nav-mobile" #mobile>
+  <ul
+    class="nav-links"
+    *ngFor="let collection of NAV_LINKS_MAIN.links; let index"
+  >
+    <li class="nav-links__item" *ngFor="let link of collection">
+      <a [routerLink]="link.route" class="nav-links__item__link">
+        {{ link.link_text }}
+        <!-- hardcoded -->
+        <div
+          class="nav-links__item__link__cart"
+          *ngIf="link.link_text === 'CART'"
+        >
+          <img
+            loading="lazy"
+            src="assets/icons/cart.svg"
+            alt="cart icon"
+            class="nav-links__item__link__cart__icon"
+          />
+          <div class="nav-links__item__link__cart__items">
+            <span class="nav-links__item__link__cart__items__count"> 0 </span>
+          </div>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>

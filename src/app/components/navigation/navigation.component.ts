@@ -1,4 +1,11 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import {
+  Component,
+  ViewChild,
+  ElementRef,
+  HostBinding,
+  AfterViewInit,
+} from '@angular/core';
+import { gsap } from 'gsap';
 import { NavLinks } from 'src/app/interfaces/nav-link';
 
 @Component({
@@ -6,9 +13,11 @@ import { NavLinks } from 'src/app/interfaces/nav-link';
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss'],
 })
-export class NavigationComponent {
+export class NavigationComponent implements AfterViewInit {
   @ViewChild('toggle') toggle!: ElementRef;
-  isActive = false;
+  @ViewChild('mobile') mobileNav!: ElementRef;
+  @HostBinding('class.mob--active') isActive = false;
+  isAnimating = false;
 
   NAV_LINKS_MAIN: NavLinks = {
     links: [
@@ -39,8 +48,32 @@ export class NavigationComponent {
     ],
   };
 
+  ngAfterViewInit(): void {
+    gsap.set(this.mobileNav.nativeElement, {
+      autoAlpha: 0,
+    });
+  }
+
+  toggleAnimation() {
+    this.isAnimating = !this.isAnimating;
+
+    let tl = gsap.timeline();
+
+    if (this.isActive)
+      tl.to(this.mobileNav.nativeElement, {
+        autoAlpha: 1,
+      });
+    else
+      tl.to(this.mobileNav.nativeElement, {
+        autoAlpha: 0,
+      });
+  }
+
   onToggle() {
     this.isActive = !this.isActive;
-    this.toggle.nativeElement.classList.toggle('hamburger--active')
+    document.body.classList.toggle('nav--active');
+    this.toggle.nativeElement.classList.toggle('hamburger--active');
+    this.mobileNav.nativeElement.classList.toggle('nav-mobile--active');
+    this.toggleAnimation();
   }
 }
