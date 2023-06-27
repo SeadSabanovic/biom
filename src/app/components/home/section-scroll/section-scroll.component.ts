@@ -1,4 +1,11 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  QueryList,
+  ViewChild,
+  ViewChildren,
+} from '@angular/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ResizeService } from 'src/app/services/resize.service';
@@ -11,6 +18,8 @@ gsap.registerPlugin(ScrollTrigger);
 })
 export class SectionScrollComponent implements AfterViewInit {
   @ViewChild('container') containerEl!: ElementRef;
+  @ViewChild('content') contentEl!: ElementRef;
+  @ViewChildren('item') itemEl!: QueryList<ElementRef>;
   ITEMS = [
     {
       img: 'assets/scroll/living_room.png',
@@ -30,34 +39,52 @@ export class SectionScrollComponent implements AfterViewInit {
     },
   ];
 
-  animation!: gsap.core.Tween | null;
+  animation!: ScrollTrigger | null;
 
-  constructor(private resizeService: ResizeService) {}
+  constructor(
+    private resizeService: ResizeService,
+    private elementRef: ElementRef
+  ) {}
+
+  calculateX() {
+    return `${-(
+      this.itemEl.toArray()[0].nativeElement.offsetWidth *
+        (this.ITEMS.length - 1) -
+      (this.ITEMS.length - 1) * -20
+    )}px`;
+  }
 
   animate() {
-    return gsap.to(this.containerEl.nativeElement, {
-      x: `${-(
-        this.containerEl.nativeElement.offsetWidth * (this.ITEMS.length - 1) -
-        (this.ITEMS.length - 1) * -20
-      )}`,
-      scrollTrigger: {
-        trigger: this.containerEl.nativeElement,
-        start: 'bottom 80%',
-        end: 'bottom 20%',
-        scrub: 1,
-        invalidateOnRefresh: true,
-      },
+    const itemElements = this.itemEl.toArray().map((el) => el.nativeElement);
+    const animation = gsap.to(itemElements, {
+      x: this.calculateX(),
     });
+
+    const scrollTrigger = ScrollTrigger.create({
+      trigger: this.containerEl.nativeElement,
+      start: 'center center',
+      end: '+=150%',
+      scrub: 1,
+      anticipatePin: 0.4,
+      pin: this.elementRef.nativeElement,
+      animation: animation,
+    });
+
+    return scrollTrigger;
   }
 
   ngAfterViewInit() {
-    this.animation = this.animate();
-    this.resizeService.resize$.subscribe(() => {
-      this.animation?.kill();
-      gsap.set(this.containerEl.nativeElement, {
-        x: 0,
-      });
+    setTimeout(() => {
       this.animation = this.animate();
+    }, 100);
+
+    this.resizeService.resize$.subscribe(() => {
+      if (this.animation) {
+        this.animation.kill();
+        setTimeout(() => {
+          this.animation = this.animate();
+        }, 100);
+      }
     });
   }
 }

@@ -14,6 +14,13 @@
       justify-content: center;
     }
 
+    &__outer {
+      @media (max-width: 1200px) {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
     &__inner {
       width: calc(100% / 3);
       transform: translateX(-20px);
@@ -41,12 +48,15 @@
         justify-content: center;
 
         &:hover {
-          #{$item}__img {
-            width: 105%;
-            height: 105%;
-          }
-          #{$item}__text {
-            opacity: 1;
+          @media (min-width: 860px) {
+            #{$item}__img {
+              width: 105%;
+              height: 105%;
+            }
+
+            #{$item}__text {
+              opacity: 1;
+            }
           }
         }
 
@@ -61,6 +71,10 @@
           opacity: 0;
           transition: opacity 0.3s var(--transition-normal);
           font-weight: 800;
+
+          @media (max-width: 860px) {
+            opacity: 1;
+          }
         }
 
         &__img {
