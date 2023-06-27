@@ -9,7 +9,11 @@
 >
   <span class="inner__label">{{ label }}</span>
   <div class="inner__icon" *ngIf="icon && style === 'outline'">
-    <img src="assets/icons/{{ icon }}.svg" *ngIf="icon !== 'ig'; else ig" />
+    <img
+      loading="lazy"
+      src="assets/icons/{{ icon }}.svg"
+      *ngIf="icon !== 'ig'; else ig"
+    />
   </div>
 </div>
 

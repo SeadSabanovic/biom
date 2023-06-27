@@ -10,7 +10,11 @@
     <div class="scroll__wrap__inner">
       <div class="scroll__wrap__inner__item" *ngFor="let item of ITEMS" #item>
         <h4 class="scroll__wrap__inner__item__text">{{ item.text }}</h4>
-        <img class="scroll__wrap__inner__item__img" [src]="item.img" />
+        <img
+          loading="lazy"
+          class="scroll__wrap__inner__item__img"
+          [src]="item.img"
+        />
       </div>
     </div>
   </div>

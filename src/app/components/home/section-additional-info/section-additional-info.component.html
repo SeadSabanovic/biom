@@ -1,11 +1,13 @@
 <div class="section-aditional-info__inner">
   <img
+    loading="lazy"
     src="assets/info/green.jpeg"
     alt=""
     class="section-aditional-info__inner__prop"
   />
   <div class="section-aditional-info__content">
     <img
+      loading="lazy"
       src="assets/info/Refill.png"
       alt=""
       class="section-aditional-info__content__prop"
@@ -26,7 +28,7 @@
         class="section-aditional-info__content__info__item"
         *ngFor="let item of info"
       >
-        <img [src]="item.icon" alt="" />
+        <img loading="lazy" [src]="item.icon" alt="" />
         <span class="body-md">
           {{ item.info }}
         </span>

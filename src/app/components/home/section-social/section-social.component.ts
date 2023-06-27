@@ -58,7 +58,6 @@ export class SectionSocialComponent implements AfterViewInit {
         start: 'top bottom',
         end: '+=100%',
         scrub: true,
-        markers: true,
       },
     });
   }

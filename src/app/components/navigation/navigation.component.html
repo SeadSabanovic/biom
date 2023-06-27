@@ -1,6 +1,11 @@
 <div class="navigation-inner">
   <a routerLink="" class="logo">
-    <img src="assets/logo.svg" alt="biom logo" class="logo__image" />
+    <img
+      loading="lazy"
+      src="assets/logo.svg"
+      alt="biom logo"
+      class="logo__image"
+    />
   </a>
   <div class="hamburger" #toggle (click)="onToggle()">
     <div class="hamburger__line"></div>
@@ -19,6 +24,7 @@
           *ngIf="link.link_text === 'CART'"
         >
           <img
+            loading="lazy"
             src="assets/icons/cart.svg"
             alt="cart icon"
             class="nav-links__item__link__cart__icon"
