@@ -145,8 +145,8 @@
   top: var(--nav-height);
   left: 0;
   width: 100%;
-  height: calc(110vh - var(--nav-height));
-  padding: 50px 50px calc(10vh + 50px);
+  height: calc(110 * var(--vh) - var(--nav-height));
+  padding: 50px 50px calc(10 * var(--vh) + 50px);
   pointer-events: none;
   pointer-events: none;
 

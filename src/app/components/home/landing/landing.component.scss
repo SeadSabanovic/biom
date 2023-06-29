@@ -2,7 +2,7 @@
   position: relative;
   z-index: 1;
   display: block;
-  height: calc(100vh - var(--nav-height) - 25px);
+  height: calc(100 * var(--vh) - var(--nav-height) - 25px);
 
   max-width: var(--container-max);
   margin: 0 auto;
