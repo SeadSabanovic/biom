@@ -75,7 +75,6 @@ export class SectionSocialComponent implements AfterViewInit {
       )
       .subscribe(() => {
         if (this.animation) {
-          console.log('test');
           this.animation.kill();
           this.animation = this.animate();
         }

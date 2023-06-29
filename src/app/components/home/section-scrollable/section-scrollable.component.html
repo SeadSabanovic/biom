@@ -1,0 +1,29 @@
+<div class="scroll__wrap">
+  <div class="scroll__wrap__outer">
+    <div class="scroll__content">
+      <p class="caption">WHERE YOU NEED IT,</p>
+      <h2 class="scroll__content__title">
+        when you <br />
+        need it.
+      </h2>
+    </div>
+    <div class="scroll__wrap__inner">
+      <div class="scroll__wrap__inner__items" #container>
+        <div
+          class="scroll__wrap__inner__items__item"
+          *ngFor="let item of ITEMS"
+          #item
+        >
+          <h4 class="scroll__wrap__inner__items__item__text">
+            {{ item.text }}
+          </h4>
+          <img
+            loading="lazy"
+            class="scroll__wrap__inner__items__item__img"
+            [src]="'assets/scroll/' + item.img"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

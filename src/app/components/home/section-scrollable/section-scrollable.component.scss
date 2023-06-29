@@ -1,0 +1,117 @@
+:host {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin-top: 50px;
+}
+
+.scroll {
+  &__wrap {
+    max-width: var(--container-max);
+    margin: 0 auto;
+
+    &__outer {
+      @media (max-width: 1200px) {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    &__inner {
+      aspect-ratio: 1.181;
+      width: calc((100% / 3));
+      transform: translateX(-20px);
+      display: block;
+
+      @media (max-width: 1200px) {
+        width: calc(100% / 2 - 10px);
+        transform: translateX(0px);
+      }
+
+      @media (max-width: 860px) {
+        width: calc(100% - 50px);
+      }
+
+      &__items {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        gap: 20px;
+
+        &__item {
+          $item: &;
+          position: relative;
+          min-width: 100%;
+          height: 100%;
+          overflow: hidden;
+          border-radius: var(--br);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &:hover {
+            @media (min-width: 860px) {
+              #{$item}__img {
+                width: 105%;
+                height: 105%;
+              }
+
+              #{$item}__text {
+                opacity: 1;
+              }
+            }
+          }
+
+          &__text {
+            position: absolute;
+            bottom: 22px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-transform: lowercase;
+            color: var(--color-light);
+            font-size: 22px;
+            opacity: 0;
+            transition: opacity 0.3s var(--transition-normal);
+            font-weight: 800;
+
+            @media (max-width: 860px) {
+              opacity: 1;
+            }
+          }
+
+          &__img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            transition: width 0.3s var(--transition-normal),
+              height 0.3s var(--transition-normal);
+          }
+        }
+      }
+    }
+  }
+
+  &__content {
+    pointer-events: none;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+
+    @media (max-width: 860px) {
+      width: 100%;
+    }
+
+    &__title {
+      font-size: 78px;
+
+      @media (max-width: 860px) {
+        font-size: 50px;
+      }
+    }
+  }
+}
