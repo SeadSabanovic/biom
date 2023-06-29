@@ -53,11 +53,11 @@ export class SectionSocialComponent implements AfterViewInit {
 
   animate() {
     return gsap.to(this.containerEl.nativeElement, {
-      x: -200,
+      x: -250,
       scrollTrigger: {
         trigger: this.containerEl.nativeElement,
         start: 'top bottom',
-        end: '+=100%',
+        end: 'bottom top',
         scrub: true,
         invalidateOnRefresh: false,
       },
@@ -65,19 +65,16 @@ export class SectionSocialComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
+    // Timeout needed because of section scrollable's pin
     setTimeout(() => {
       this.animation = this.animate();
     }, 1000);
 
-    this.resizeService.resize$
-      .pipe(
-        debounceTime(2000) // Debounce for 2000ms (adjust as needed)
-      )
-      .subscribe(() => {
-        if (this.animation) {
-          this.animation.kill();
-          this.animation = this.animate();
-        }
-      });
+    this.resizeService.resize$.pipe(debounceTime(1000)).subscribe(() => {
+      if (this.animation) {
+        this.animation.kill();
+        this.animation = this.animate();
+      }
+    });
   }
 }
