@@ -17,35 +17,35 @@ export class SectionSocialComponent implements AfterViewInit {
   animation!: GSAPAnimation | null;
   socials: Social[] = [
     {
-      image: 'assets/social/wipe_green.png',
+      image: 'wipe_green.png',
       href: 'https://www.instagram.com/',
     },
     {
-      image: 'assets/social/kitchen.png',
+      image: 'kitchen.png',
       href: 'https://www.instagram.com/',
     },
     {
-      image: 'assets/social/gold.png',
+      image: 'gold.png',
       href: 'https://www.instagram.com/',
     },
     {
-      image: 'assets/social/white.png',
+      image: 'white.png',
       href: 'https://www.instagram.com/',
     },
     {
-      image: 'assets/social/wipe_green.png',
+      image: 'wipe_green.png',
       href: 'https://www.instagram.com/',
     },
     {
-      image: 'assets/social/kitchen.png',
+      image: 'kitchen.png',
       href: 'https://www.instagram.com/',
     },
     {
-      image: 'assets/social/gold.png',
+      image: 'gold.png',
       href: 'https://www.instagram.com/',
     },
     {
-      image: 'assets/social/white.png',
+      image: 'white.png',
       href: 'https://www.instagram.com/',
     },
   ];

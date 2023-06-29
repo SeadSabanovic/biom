@@ -49,7 +49,7 @@
         padding: 26px 0 50px;
         position: absolute;
         opacity: 0;
-        transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: opacity 0.3s var(--transition-normal);
 
         &--active {
           opacity: 1;

@@ -87,7 +87,7 @@
           font-size: 14px;
           color: var(--color-light);
           text-transform: uppercase;
-          transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: opacity 0.2s var(--transition-normal);
           white-space: nowrap;
 
           &:hover {
@@ -127,7 +127,7 @@
         a {
           text-decoration: none;
           color: inherit;
-          transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: opacity 0.2s var(--transition-normal);
 
           &:hover {
             opacity: 0.8;
@@ -149,7 +149,7 @@
         width: 30px;
         height: 30px;
         background-color: var(--color-light);
-        transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: transform 0.1s var(--transition-normal);
 
         &:hover {
           transform: scale(1.1) rotate(5deg);
